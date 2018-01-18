@@ -1,15 +1,19 @@
 # MedicalChart
 Medical Chart with Time scale
 
-Description: MVP for this is taking medical records and displaying them in a time series format on a body chart.
+### Objective
+As a military member I’ve moved frequently. As a project manager I’ve shifted under various health insurance programs and have had to routinely change doctors since they might not be covered under the new insurance.  Medical records don’t always transfer and as a patient you need to take charge of your history and be able to point out previous problems you’ve had that might be related. 
 
-##Wireframes
-[Full set of wireframes can be found here](https://github.com/TLukeMcDonald/MedicalChart/tree/master/Assets/Wireframes) Create with [Basalmiq](https://balsamiq.cloud/srwjz/p6u5k)
-- [Main View with filter shelf out](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Filter.png)
-- [Details Page](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Detail%20Record.png)
-- [Medicine List](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Medicine%20Details.png)
+### Solution
+Now you can search by body part and time series to easily see trends and patterns. Import your medical records prior to leaving doctors or when you get sick. 
 
-##User stories 
+## Wireframes <br>
+ [Full set of wireframes can be found here](https://github.com/TLukeMcDonald/MedicalChart/tree/master/Assets/Wireframes) Create with [Basalmiq](https://balsamiq.cloud/srwjz/p6u5k)
+- ![Main View with filter shelf out](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Filter.png)
+- ![Details Page](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Detail%20Record.png)
+- ![Medicine List](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Wireframes/Medicine%20List.png)
+
+## User stories <br>
 Tracking of the project and user stories can been seen in the [Projects Tab](https://github.com/TLukeMcDonald/MedicalChart/projects)
 1. As a user I would like to login and see only my data.
 1. As a user I would like to display medical records in a list.
@@ -23,24 +27,17 @@ Tracking of the project and user stories can been seen in the [Projects Tab](htt
 1. As a user I would like to sort medicines by Alphabet.
 1. As a user I would like to import medical records by cvs.
 
-##References and Acknowledgement 
+## References and Acknowledgement 
 
 
-###Technologies
+## Technologies
 - Ruby
 - Ruby on Rails
 - D3
 
-###APIs
-List
-Description
 
-###Modules
-List
-Descirption
+## Feautured code snippet of a part of the app you're particularly proud of
 
-##Feautured code snippet of a part of the app you're particularly proud of
+## Future Any things you plan to fix or features you plan to add
 
-##Future Any things you plan to fix or features you plan to add
-
-##Installation
+## Installation
