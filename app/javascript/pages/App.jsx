@@ -13,9 +13,7 @@ import MedicationList from './MedicationList';
 import UserProfile from './UserProfile';
 import Import from './Import';
 import NotFound from './NotFound';
-
-
-
+import Crest from '../components/Crest';
 
 export default class App extends React.Component {
 constructor(props) {
@@ -30,6 +28,7 @@ constructor(props) {
       <Header/>
       <Aside/>
       <Navbar/>
+      <Crest/>
       <h1>Main App page!</h1>
       <Home/>
       <ChartList/>
@@ -38,6 +37,7 @@ constructor(props) {
       <MedicationDetail/>
       <MedicationList/>
       <UserProfile/>
+
       <Import/>
       <NotFound/>
       <Footer/>
