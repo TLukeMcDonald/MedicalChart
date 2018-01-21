@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Bootstrap for css
+gem 'bootstrap', '~> 4.0.0'
 # devise for auth
 gem 'devise'
 # Foreman runs server
