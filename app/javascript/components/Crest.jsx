@@ -1,11 +1,9 @@
 import React from 'react';
-import CrestSVG from "./../../assets/images/crest2.png"
 import "./../../assets/stylesheets/crest"
 const Crest = (props) => {
   console.log('Crest component loaded');
   return (
     <div>
-      <h1> CrestSVG </h1>
 
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274.53 239.75">

@@ -14,6 +14,9 @@ import UserProfile from './UserProfile';
 import Import from './Import';
 import NotFound from './NotFound';
 import Crest from '../components/Crest';
+import "./../../assets/stylesheets/crest"
+
+
 
 export default class App extends React.Component {
 constructor(props) {
@@ -25,12 +28,15 @@ constructor(props) {
   render() {
     return (
       <div>
+      <button type="button" class="btn btn-primary">Primary</button>
       <Header/>
       <Aside/>
       <Navbar/>
-      <Crest/>
       <h1>Main App page!</h1>
       <Home/>
+      <div className="crest">
+        <Crest/>
+      </div>
       <ChartList/>
       <ChartDetails/>
       <ChartForm/>
