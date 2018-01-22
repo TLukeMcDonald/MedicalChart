@@ -3,14 +3,12 @@ import Crest from '../components/Crest';
 import "./../../assets/stylesheets/crest"
 
 
-
-
 const Navbar = (props) => {
 console.log('Navbar component loaded');
 return (
   <div>
-    <h1> Navbar </h1>
-      <nav className="navbar fixed-top  navbar-expand-lg navbar-light bg-light">
+
+      <nav className="navbarReduce navbar fixed-top  navbar-expand-lg navbar-light bg-light">
         <div className="navbar-nav container col-md-3 ml-auto">
           <a className="navbar-brand" href="home#index">
             <div className="d-inline-block align-top crestBug">
@@ -34,8 +32,8 @@ return (
           </div>
             <div class="navbar-nav  col-md-3 ml-auto ">
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control col-7" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success my-2 col-5 my-sm-0" type="submit">Search</button>
               </form>
             </div>
         </div>
