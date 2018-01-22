@@ -6,23 +6,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const Aside = (props) => {
   console.log('Aside component loaded');
 
-    let page = this.props.location.pathname.substr(1);
-    if (!page) page = 'home';
-
 
   return (
 
     <div>
       <h1> Aside </h1>
-     <div>
-       <ReactCSSTransitionGroup
-          transitionName="background"
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
-        >
-          <BackgroundImage page={page} key={page} />
-        </ReactCSSTransitionGroup>
-      </div>
+
 
 
             <div class="sidebar" id="sidebar">
