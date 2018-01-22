@@ -2,10 +2,7 @@
   margin:0;
   padding: 0;
 }
-html,body{
-  height: 100%;
-  width: 100%;
-}
+
 .wrapper{
   width: 100%;
    height: 100%;
@@ -14,8 +11,8 @@ html,body{
 }
 .sidebar{
   position: relative;
-  width: 255px;
-  left: -200px;
+  width: 200px;
+  left: -180px;
   height: 100%;
   background-color: #333;
   ul{
@@ -31,6 +28,9 @@ html,body{
    }
   }
 
+}
+.sidebar:hover {
+  left:0px;
 }
 .fullside{
   left: 0px;

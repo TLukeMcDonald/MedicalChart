@@ -9,14 +9,11 @@ const Aside = (props) => {
 
   return (
 
-    <div>
-      <h1> Aside </h1>
+    <div className='aside'>
 
 
-
-            <div class="sidebar" id="sidebar">
+            <div className="sidebar" id="sidebar">
             <button id="b1">OPEN</button>
-            <button id="b2">CLOSE</button>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">Article</a></li>
@@ -25,7 +22,7 @@ const Aside = (props) => {
             </ul>
           </div>
 
-        <div class="wrapper">
+        <div className="wrapper">
 
         </div>
     </div>

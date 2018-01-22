@@ -1,4 +1,19 @@
 .main {
   width: 100vw;
   border: 1px solid red;
+  display: inline-flex;
+}
+
+.asideFrame {
+  display: fixed;
+  height: 88vh;
+    border: 1px solid red;
+}
+
+.mainFrame {
+  border: 1px solid green;
+  display: fixed;
+  left: -150px;
+  z-index: 1;
+
 }
