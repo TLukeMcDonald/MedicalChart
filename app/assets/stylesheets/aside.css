@@ -5,16 +5,16 @@
 
 .wrapper{
   width: 100%;
-   height: 100%;
+  height: 90vh;
   overfow: hidden;
-  background-color: #666;
+  background-color: #F7F8F9;
 }
 .sidebar{
   position: relative;
   width: 200px;
   left: -180px;
-  height: 100%;
-  background-color: #333;
+  height: 89vh;
+  background-color: #F7F8F9;
   ul{
     text-style: none;
     li{
@@ -30,7 +30,8 @@
 
 }
 .sidebar:hover {
-  left:0px;
+  left: -16px;
+  padding-left: 21px;
 }
 .fullside{
   left: 0px;
@@ -38,9 +39,6 @@
 #b1{
   float: right;
   background-color: #777;
-}
-#b2{
-  float: right;
 }
 
 #b1,#b2{
