@@ -1,11 +1,17 @@
 import React from 'react';
+import Aside from '../components/Aside';
 import "./../../assets/stylesheets/Main"
 
 const Main = (props) => {
   console.log('Main component loaded');
   return (
     <div className="main">
-      <h1> Main </h1>
+      <div className='asideFrame'>
+        <Aside/>
+      </div>
+      <div className='mainFrame'>
+        <h1> Main </h1>
+      </div>
 
     </div>
   );

@@ -28,8 +28,6 @@ constructor(props) {
     return (
       <div>
         <Navbar/>
-        <Aside/>
-
 
         <Switch>
           <Route path="/" exact component={Main} />
