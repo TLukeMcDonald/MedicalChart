@@ -6,15 +6,15 @@ const ChartForm = (props) => {
     <div>
       <h1> ChartForm </h1>
 
-        <div class="container">
-          <div class="row">
-            <div class="col">
+        <div className="container">
+          <div className="row">
+            <div className="col">
               1 of 3
             </div>
-            <div class="col">
+            <div className="col">
               2 of 3
             </div>
-            <div class="col">
+            <div className="col">
               3 of 3
             </div>
           </div>
