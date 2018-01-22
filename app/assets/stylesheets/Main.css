@@ -5,7 +5,7 @@
 }
 
 .asideFrame {
-  display: fixed;
+  display: absolute;
   height: 88vh;
     border: 1px solid red;
 }
