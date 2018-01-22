@@ -1,0 +1,49 @@
+*{
+  margin:0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+.wrapper{
+  width: 100%;
+   height: 100%;
+  overfow: hidden;
+  background-color: #666;
+}
+.sidebar{
+  position: relative;
+  width: 255px;
+  left: -200px;
+  height: 100%;
+  background-color: #333;
+  ul{
+    text-style: none;
+    li{
+    padding:10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+      a{
+      color: #fff;
+      text-decoration: none;
+    }
+   }
+  }
+
+}
+.fullside{
+  left: 0px;
+}
+#b1{
+  float: right;
+  background-color: #777;
+}
+#b2{
+  float: right;
+}
+
+#b1,#b2{
+  width: 55px;
+}
+

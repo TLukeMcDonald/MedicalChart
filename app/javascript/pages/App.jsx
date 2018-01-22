@@ -29,9 +29,9 @@ constructor(props) {
     return (
       <div>
       <button type="button" class="btn btn-primary">Primary</button>
+      <Navbar/>
       <Header/>
       <Aside/>
-      <Navbar/>
       <h1>Main App page!</h1>
       <Home/>
       <div className="crest">
