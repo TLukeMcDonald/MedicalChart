@@ -14,13 +14,13 @@ const Main = (props) => {
       <p>Now you can search by body part and time series to easily see trends and partterns. </p>
       </div>
       <div className='links '>
-        <a href="ChartList" class="iconNav chartNav">
+        <a href="ChartList" className="iconNav chartNav">
           <div>
             <img src={chart} className="" alt="chart" />
             Chart
           </div>
         </a>
-        <a href="MedicationList" class="iconNav medNav">
+        <a href="MedicationList" className="iconNav medNav">
           <div>
             <img src={pill} className="" alt="chart" />
             Medicine

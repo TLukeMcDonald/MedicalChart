@@ -16,13 +16,40 @@ import Crest from '../components/Crest';
 import "./../../assets/stylesheets/crest"
 
 
-
 export default class App extends React.Component {
 constructor(props) {
   super(props);
-
-
+    this.state = {
+      chartsData: null,
+      chartsLoaded: false,
+    }
+    this.getCharts=this.getCharts.bind(this);
 }
+
+
+componentDidMount() {
+  console.log('componentDidMount');
+  this.getCharts();
+}
+
+getCharts() {
+  console.log({'chartsData': this.state.chartsData})
+  fetch(`/`)
+  // .then((res) => {
+     // { debugger; }
+    // return res.json() })
+    // .then(res => res.json())
+    .then(res => {
+      // console.log(res);
+      this.setState({
+        chartsData: res,
+        chartsLoaded: true,
+      })
+      console.log({'chartsData': this.state.chartsData});
+    })
+    .catch(err => console.log(err))
+  }
+
 
   render() {
     return (
@@ -45,20 +72,7 @@ constructor(props) {
           <Route path="/" component={NotFound}/>
       </Switch>
 
-         { /*
-        <Main/>
-        <div className="crest">
-          <Crest/>
-        </div>
-        <ChartList/>
-        <ChartDetails/>
-        <ChartForm/>
-        <MedicationDetail/>
-        <MedicationList/>
-        <UserProfile/>
 
-        <Import/>
-        <NotFound/> */ }
         <Footer/>
       </div>
     );
