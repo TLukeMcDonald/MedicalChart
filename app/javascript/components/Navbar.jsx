@@ -33,7 +33,7 @@ return (
             <div className="navbar-nav  col-md-3 ml-auto ">
               <form className="form-inline my-2 my-lg-0">
                 <input className="form-control col-7" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success my-2 col-5 my-sm-0" type="submit">Search</button>
+                <button className="btn btn-secondary my-2 col-5 my-sm-0" type="submit">Search</button>
               </form>
             </div>
         </div>

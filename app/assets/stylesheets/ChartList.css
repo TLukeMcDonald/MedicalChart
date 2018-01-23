@@ -2,3 +2,33 @@
   width: 100vw;
   border: 1px solid red;
 }
+
+
+.main {
+  width: 100vw;
+  border: 1px solid red;
+  display: inline-flex;
+}
+
+.human {
+  max-height: 600px;
+}
+
+.asideFrame {
+  display: absolute;
+  height: 88vh;
+    border: 1px solid red;
+}
+
+.mainFrame {
+  border: 1px solid green;
+  display: fixed;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.record {
+  max-height: 88vh;
+  overflow: scroll;
+}
