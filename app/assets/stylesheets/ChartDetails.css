@@ -1,0 +1,19 @@
+.frame {
+  border: 1px solid red;
+
+}
+
+.humanSmall {
+  height: 30vh;
+  margin: 0 auto;
+  border: 1px solid green;
+
+}
+
+.frameHuman {
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}

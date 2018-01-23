@@ -21,13 +21,20 @@ const ChartList = (props) => {
           </div>
           <div className="col-4">
             <div className="record">
-              <ChartRecord/>
-              <ChartRecord/>
-              <ChartRecord/>
-              <ChartRecord/>
-              <ChartRecord/>
-              <ChartRecord/>
-              <ChartRecord/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
             </div>
           </div>
         </div>
