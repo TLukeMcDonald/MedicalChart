@@ -1,22 +1,22 @@
 import React from 'react';
+import MedicationSmall from './../components/MedicationSmall';
+import "./../../assets/stylesheets/MedicationList"
 
 const MedicationList = (props) => {
   console.log('MedicationList component loaded');
   return (
     <div>
-      <h1> MedicationList </h1>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              1 of 3
-            </div>
-            <div className="col">
-              2 of 3
-            </div>
-            <div className="col">
-              3 of 3
-            </div>
-          </div>
+      <h1 className="text-center"> Medications </h1>
+        <div className="card-deck justify-content-center">
+          <MedicationSmall />
+          <MedicationSmall />
+          <MedicationSmall />
+          <MedicationSmall />
+          <MedicationSmall />
+          <MedicationSmall />
+
+
+
         </div>
     </div>
   );
