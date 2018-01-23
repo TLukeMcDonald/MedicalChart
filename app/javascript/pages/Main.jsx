@@ -20,7 +20,7 @@ const Main = (props) => {
             Chart
           </div>
         </a>
-        <a href="MedicineList" class="iconNav medNav">
+        <a href="MedicationList" class="iconNav medNav">
           <div>
             <img src={pill} className="" alt="chart" />
             Medicine
