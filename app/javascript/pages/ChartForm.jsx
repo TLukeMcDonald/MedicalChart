@@ -6,14 +6,14 @@ export default class Chartform extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
-      problem:        props.chart ? props.chart.problem : '',
-      brewery:     props.chart ? props.chart.brewery : '',
-      description: props.chart ? props.chart.description : '',
-      typeID: props.chart ? props.chart.typeID : '',
-
-
+      problem:    props.chart ? props.chart.problem : '',
+      event_date: props.chart ? props.chart.event_date : '',
+      location:   props.chart ? props.chart.location : '',
+      status:     props.chart ? props.chart.status : '',
+      provider:     props.chart ? props.chart.provider : '',
 
 }
+
 
   handleInputChange(event) {
     const target = event.target;
@@ -59,9 +59,9 @@ export default class Chartform extends React.Component {
             <input
               type="text"
               className="formInput"
-              name="brewery"
-              placeholder="Brewery"
-              value={this.state.brewery}
+              name="event_date"
+              placeholder="Event Date"
+              value={this.state.event_date}
               onChange={this.handleChange}
             />
 
@@ -69,15 +69,35 @@ export default class Chartform extends React.Component {
             <input
               type="text"
               className="formInput"
-              name="description"
+              name="location"
               placeholder="Description"
-              value={this.state.description}
+              value={this.state.location}
               onChange={this.handleChange}
             />
 
 
+            <input
+              type="text"
+              className="formInput"
+              name="status"
+              placeholder="Status"
+              value={this.state.status}
+              onChange={this.handleChange}
+            />
+
+            <input
+              type="text"
+              className="formInput"
+              name="provider"
+              placeholder="Provider"
+              value={this.state.provider}
+              onChange={this.handleChange}
+            />
+
+
+{/*
             <select
-              name="typeID"
+              name="status"
               value={this.state.value}
               onChange={this.handleChange}
               className="formInput2"
@@ -91,16 +111,8 @@ export default class Chartform extends React.Component {
                 </option>
               ))}
             </select>
+*/}
 
-
-            <input
-              type="text"
-              className="formInput"
-              name="typeID"
-              placeholder="Type"
-              value={this.state.type}
-              onChange={this.handleChange}
-            />
 
 
             <input
