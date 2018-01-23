@@ -1,0 +1,13 @@
+.recordSmall {
+  display: inline;
+}
+
+
+.col{
+  margin: 0px -10px -10px -10px;
+  vertical-align: center;
+  /*padding: 0px;*/
+  border: 0px solid black;
+  text-align: center;
+}
+
