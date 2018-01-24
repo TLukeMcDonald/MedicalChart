@@ -8,7 +8,7 @@ const ChartRecord = (props) => {
           <div className="card col">
             <a href="#" className=" ">
             <div className="card-body">
-              <div class="row">
+              <div className="row">
                <h5 className="card-title col recordSmall"> {props.problem} </h5>
                <p className="card-text col recordSmall"> {props.date} {props.status} </p>
                </div>
