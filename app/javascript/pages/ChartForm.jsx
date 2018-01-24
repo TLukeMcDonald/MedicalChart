@@ -11,7 +11,8 @@ export default class Chartform extends React.Component {
       location:   props.chart ? props.chart.location : '',
       status:     props.chart ? props.chart.status : '',
       provider:     props.chart ? props.chart.provider : '',
-
+  };
+  this.handleChange = this.handleChange.bind(this);
 }
 
 
