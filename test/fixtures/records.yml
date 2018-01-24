@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  problem: MyText
+  event_date: 2018-01-23
+  location: MyText
+  status: MyText
+  provider: MyText
+  comments: MyText
+
+two:
+  problem: MyText
+  event_date: 2018-01-23
+  location: MyText
+  status: MyText
+  provider: MyText
+  comments: MyText
