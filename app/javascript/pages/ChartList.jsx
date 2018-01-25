@@ -5,7 +5,7 @@ import "./../../assets/stylesheets/ChartList"
 import male from "./../../assets/images/male.png"
 
 const ChartList = (props) => {
-  console.log('ChartList component loaded');
+  console.log({'ChartList component loaded':props});
   return (
     <div className="chartlist">
         <div className="container-fluid">
@@ -21,20 +21,18 @@ const ChartList = (props) => {
           </div>
           <div className="col-4">
             <div className="record">
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+
+
+              {props.records.map( record => (
+                <ChartRecord
+                  key={record.id}
+                  problem={record.problem}
+                  date={record.event_date}
+                  status={record.status}
+                  />
+                ))}
+
+
             </div>
           </div>
         </div>

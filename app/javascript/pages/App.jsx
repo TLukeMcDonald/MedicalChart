@@ -39,7 +39,7 @@ getCharts() {
   .then(res => res.json())
   .then((res) => {
     this.setState({
-        chartsData: res.data,
+        chartsData: res.data.records,
         chartsLoaded: true,
       })
       console.log(res)
@@ -62,7 +62,25 @@ getCharts() {
           <Route path="/Main" render={props => (<Main {...props}/*locationsList={this.state.locationsData}*/ /> )}
             exact />
 
-          <Route path="/ChartList" component={ChartList}/>
+
+
+
+      {/* Location List-  If api Locations data has returned locationlist component is rendered */}
+          {(this.state.chartsLoaded)
+          ? <Route
+            path="/ChartList"
+            render={props => (<ChartList
+              {...props}
+              records={this.state.chartsData}
+            />
+            )}
+            exact
+          />
+          : <p> Loading... </p> }
+
+
+
+
           <Route path="/ChartDetails" component={ChartDetails}/>
           <Route path="/ChartForm" component={ChartForm}/>
           <Route path="/MedicationList" component={MedicationList}/>

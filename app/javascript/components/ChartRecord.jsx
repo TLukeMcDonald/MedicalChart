@@ -6,7 +6,7 @@ const ChartRecord = (props) => {
   return (
 
           <div className="card col">
-            <a href="#" className=" ">
+            <NavLink to="MedicationList" className=" ">
             <div className="card-body">
               <div className="row">
                <h5 className="card-title col recordSmall"> {props.problem} </h5>
@@ -14,7 +14,7 @@ const ChartRecord = (props) => {
                </div>
 
             </div>
-              </a>
+              </NavLink>
           </div>
 
 

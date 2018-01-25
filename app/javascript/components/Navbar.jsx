@@ -10,12 +10,12 @@ return (
 
       <nav className="navbarReduce navbar fixed-top  navbar-expand-lg navbar-light bg-light">
         <div className="navbar-nav container col-md-3 ml-auto">
-          <a className="navbar-brand" href="home#index">
+          <NavLink className="navbar-brand" to="/">
             <div className="d-inline-block align-top crestBug">
               <Crest/>
             </div>
            <span> MyChart</span>
-          </a>
+          </NavLink>
         </div>
 
 
@@ -24,11 +24,11 @@ return (
         </button>
         <div className="collapse navbar-collapse navbar-expand-lg" id="navbarNav">
           <div className="navbar-nav container col-md-3 ml-auto">
-            <a className="nav-item nav-link active" href="/">Home<span className="sr-only">(current)</span></a>
-            <a className="nav-item nav-link" href="ChartList">Chart</a>
-            <a className="nav-item nav-link" href="ChartDetails">Record</a>
-            <a className="nav-item nav-link" href="MedicationList">Medicine</a>
-            <a className="nav-item nav-link" href="ChartForm">New</a>
+            <NavLink activeClassName="active" className="nav-item nav-link" to="/">Home<span className="sr-only">(current)</span></NavLink>
+            <NavLink activeClassName="active" className="nav-item nav-link" to="ChartList">Chart</NavLink>
+            <NavLink activeClassName="active" className="nav-item nav-link" to="ChartDetails">Record</NavLink>
+            <NavLink activeClassName="active" className="nav-item nav-link" to="MedicationList">Medicine</NavLink>
+            <NavLink activeClassName="active" className="nav-item nav-link" to="ChartForm">New</NavLink>
           </div>
             <div className="navbar-nav  col-md-3 ml-auto ">
               <form className="form-inline my-2 my-lg-0">
