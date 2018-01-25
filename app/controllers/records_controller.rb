@@ -5,6 +5,11 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     @records = Record.all
+    render json: {
+      data: {
+        records: @records
+      }
+    }
   end
 
   # GET /records/1

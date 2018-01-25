@@ -33,22 +33,31 @@ componentDidMount() {
 }
 
 getCharts() {
-  console.log({'chartsData': this.state.chartsData})
-  fetch(`/`)
-  // .then((res) => {
-     // { debugger; }
-    // return res.json() })
-    // .then(res => res.json())
-    .then(res => {
-      // console.log(res);
-      this.setState({
+  console.log({'before chartsData': this.state.chartsData})
+  debugger;
+  fetch(`http://localhost:5000/records`)
+  .then(res => res.json())
+      console.log(res)
+  .then((res) => {
+    this.setState({
         chartsData: res,
         chartsLoaded: true,
       })
-      console.log({'chartsData': this.state.chartsData});
+      console.log({'after chartsData': this.state.chartsData});
     })
     .catch(err => console.log(err))
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
   render() {
