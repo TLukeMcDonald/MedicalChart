@@ -26,9 +26,7 @@ const ChartList = (props) => {
               {props.records.map( record => (
                 <ChartRecord
                   key={record.id}
-                  problem={record.problem}
-                  date={record.event_date}
-                  status={record.status}
+                  record={record}
                   />
                 ))}
 
@@ -43,11 +41,3 @@ const ChartList = (props) => {
 
 export default ChartList;
 
-
-      // <div className='asideFrame'>
-      //   <Aside/>
-      // </div>
-      // <div className='mainFrame'>
-      //   <h1> Main </h1>
-      //   <p> Lorem ipsum dc, </p>
-      // </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link} from 'react-router-dom';
 import "./../../assets/stylesheets/Main";
 import chart from "./../../assets/images/004-medical.svg";
 import pill from "./../../assets/images/003-pills.svg";
@@ -14,18 +15,18 @@ const Main = (props) => {
       <p>Now you can search by body part and time series to easily see trends and partterns. </p>
       </div>
       <div className='links '>
-        <NavLink to="ChartList" className="iconNav chartNav">
+        <Link to="ChartList" className="iconNav chartNav">
           <div>
             <img src={chart} className="" alt="chart" />
             Chart
           </div>
-        </NavLink>
-        <NavLink to="MedicationList" className="iconNav medNav">
+        </Link>
+        <Link to="MedicationList" className="iconNav medNav">
           <div>
             <img src={pill} className="" alt="chart" />
             Medicine
           </div>
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

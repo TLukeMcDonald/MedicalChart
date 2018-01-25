@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import Crest from '../components/Crest';
 import "./../../assets/stylesheets/crest"
 
@@ -10,12 +11,12 @@ return (
 
       <nav className="navbarReduce navbar fixed-top  navbar-expand-lg navbar-light bg-light">
         <div className="navbar-nav container col-md-3 ml-auto">
-          <NavLink className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/">
             <div className="d-inline-block align-top crestBug">
               <Crest/>
             </div>
            <span> MyChart</span>
-          </NavLink>
+          </Link>
         </div>
 
 
@@ -24,7 +25,7 @@ return (
         </button>
         <div className="collapse navbar-collapse navbar-expand-lg" id="navbarNav">
           <div className="navbar-nav container col-md-3 ml-auto">
-            <NavLink activeClassName="active" className="nav-item nav-link" to="/">Home<span className="sr-only">(current)</span></NavLink>
+            <NavLink activeClassName="active" className="nav-item nav-link" exact to="/">Home</NavLink>
             <NavLink activeClassName="active" className="nav-item nav-link" to="ChartList">Chart</NavLink>
             <NavLink activeClassName="active" className="nav-item nav-link" to="ChartDetails">Record</NavLink>
             <NavLink activeClassName="active" className="nav-item nav-link" to="MedicationList">Medicine</NavLink>
