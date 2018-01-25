@@ -79,9 +79,19 @@ getCharts() {
           : <p> Loading... </p> }
 
 
+          {(this.state.chartsLoaded)
+          ? <Route
+            path="/ChartDetails"
+            render={props => (<ChartDetails
+              {...props}
+              records={this.state.chartsData}
+            />
+            )}
+            exact
+          />
+          : <p> Loading... </p> }
 
 
-          <Route path="/ChartDetails" component={ChartDetails}/>
           <Route path="/ChartForm" component={ChartForm}/>
           <Route path="/MedicationList" component={MedicationList}/>
           <Route path="/MedicationDetail" component={MedicationDetail}/>

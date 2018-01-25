@@ -5,7 +5,7 @@ import ChartRecord from './../components/ChartRecord';
 
 
 const ChartDetails = (props) => {
-  console.log('ChartDetails component loaded');
+  console.log({'ChartDetails component loaded':props});
   return (
     <div>
       <h1> ChartDetails </h1>
@@ -20,30 +20,27 @@ const ChartDetails = (props) => {
               </div>
             </div>
             <div className="col-5 frame">
-              <h2 className="title"> Title </h2>
-              <p className=""> Back pain (SCT 161891005) </p>
-              <p> 13 Jan 2016 @ 1200 </p>
-              <p> VA New York Harbor HCS </p>
-              <p> ACTIVE </p>
-              <p> PLAGEMAN,DEBORAH S </p>
+              <h2 className="title"> {props.records[1].problem}</h2>
+              <p>  </p>
+              <p> Date: {props.records[1].event_date}</p>
+              <p> Location: {props.records[1].location} </p>
+              <p> Body Part: {props.records[1].status} </p>
+              <p> Status: {props.records[1].status} </p>
+              <p> Provider: {props.records[1].provider} </p>
               <p> -- </p>
             </div>
             <div className="col-4 frame">
-                          <div className="record">
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
-              <ChartRecord problem='Lower back pain' date='01/01/2000' status='Finished Treatment'/>
+              <div className="record">
+
+              {props.records.map( record => (
+                <ChartRecord
+                  key={record.id}
+                  record={record}
+                  />
+                ))}
+
+
+
             </div>
             </div>
           </div>
