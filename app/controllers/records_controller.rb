@@ -1,10 +1,16 @@
+
 class RecordsController < ApplicationController
-  before_action :set_record, only: [:show, :edit, :update, :destroy]
+  # before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   # GET /records
   # GET /records.json
   def index
     @records = Record.all
+    render json: {
+      data: {
+        records: @records
+      }
+    }
   end
 
   # GET /records/1

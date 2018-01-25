@@ -29,26 +29,26 @@ constructor(props) {
 
 componentDidMount() {
   console.log('componentDidMount');
-  this.getCharts();
+  this.getCharts(this.state.chartsLoaded);
 }
 
 getCharts() {
-  console.log({'chartsData': this.state.chartsData})
-  fetch(`/`)
-  // .then((res) => {
-     // { debugger; }
-    // return res.json() })
-    // .then(res => res.json())
-    .then(res => {
-      // console.log(res);
-      this.setState({
-        chartsData: res,
+  console.log({'before chartsData': this.state.chartsData})
+  // debugger;
+  fetch('/records')
+  .then(res => res.json())
+  .then((res) => {
+    this.setState({
+        chartsData: res.data,
         chartsLoaded: true,
       })
-      console.log({'chartsData': this.state.chartsData});
+      console.log(res)
+      console.log({'after chartsData': this.state.chartsData});
     })
     .catch(err => console.log(err))
   }
+
+
 
 
   render() {
