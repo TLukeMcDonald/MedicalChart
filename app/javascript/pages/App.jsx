@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Aside from '../components/Aside';
@@ -14,6 +14,9 @@ import Import from './Import';
 import NotFound from './NotFound';
 import Crest from '../components/Crest';
 import "./../../assets/stylesheets/crest"
+import * as d3 from "d3";
+import { render } from 'react-dom';
+import SortableTable from 'react-sortable-table';
 
 
 export default class App extends React.Component {
