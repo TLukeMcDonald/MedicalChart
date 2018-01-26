@@ -1,12 +1,12 @@
 .chartlist {
   width: 100vw;
-  border: 1px solid red;
+  border: 0px solid red;
 }
 
 
 .main {
   width: 100vw;
-  border: 1px solid red;
+  border: 0px solid red;
   display: inline-flex;
 }
 
@@ -17,11 +17,11 @@
 .asideFrame {
   display: absolute;
   height: 88vh;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 
 .mainFrame {
-  border: 1px solid green;
+  border: 0px solid green;
   display: fixed;
   justify-content: center;
   text-align: center;

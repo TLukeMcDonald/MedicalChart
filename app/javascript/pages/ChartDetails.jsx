@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import male from "./../../assets/images/male.png"
 import "./../../assets/stylesheets/ChartDetails"
 import ChartRecord from './../components/ChartRecord';
@@ -16,7 +17,7 @@ const ChartDetails = (props) => {
                 <img src={male} className="humanSmall" alt="male" />
               </div>
               <div className="row align-items-end">
-                <button className="btn align-items-end btn-secondary">Back </button>
+                <Link to="ChartList" className="btn align-items-end btn-secondary">Back </Link>
               </div>
             </div>
             <div className="col-5 frame">

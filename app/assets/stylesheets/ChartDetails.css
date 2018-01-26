@@ -1,12 +1,15 @@
 .frame {
-  border: 1px solid red;
+  border: 0px solid red;
 
+}
+.title {
+  text-align: center;
 }
 
 .humanSmall {
   height: 30vh;
   margin: 0 auto;
-  border: 1px solid green;
+  border: 0px solid green;
 
 }
 
