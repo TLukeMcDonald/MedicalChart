@@ -16,8 +16,8 @@ import Crest from '../components/Crest';
 import "./../../assets/stylesheets/crest"
 import * as d3 from "d3";
 import { render } from 'react-dom';
-import SortableTable from 'react-sortable-table';
-
+// import SortableTable from 'react-sortable-table';
+import BarChart from '../components/BarChart';
 
 export default class App extends React.Component {
 constructor(props) {
