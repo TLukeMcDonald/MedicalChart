@@ -26,9 +26,10 @@ class SliderBar extends Component {
      const randomX = d3.randomUniform(0, 10),
         randomY = d3.randomNormal(0.5, 0.12),
         // data plugged into chart, range was 800
-        data = d3.range(500).map(function() {
+        data = d3.range(5).map(function() {
           return [randomX(), randomY()]; });
-        // console.log({'slider data':data})
+        // data = [4,.7]
+        console.log({'slider data':data})
 
 
     // creating initial frame
@@ -69,7 +70,7 @@ class SliderBar extends Component {
         .call(brush.move, [3, 5].map(x))
       .selectAll(".overlay")
         .each(function(d) { d.type = "selection"; }) // Treat overlay interaction as move.
-        .on("mousedown touchstart", brushcentered); // Recenter before brushing.
+        .on("mousedown touchstart", brushcentered); // Recenter before brushing. //mousedown: Triggered by an element when a mouse button is pressed down over it
 
     g.append("g")
         .attr("transform", "translate(0," + height + ")")

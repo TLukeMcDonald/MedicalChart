@@ -1,20 +1,24 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import MedicationSmall from './../components/MedicationSmall';
 import "./../../assets/stylesheets/MedicationList"
 
 const MedicationList = (props) => {
-  console.log('MedicationList component loaded');
+  console.log({'MedicationList loaded':props});
   return (
     <div>
       <h1 className="text-center"> Medications </h1>
         <div className="card-deck justify-content-center">
-          <MedicationSmall />
-          <MedicationSmall />
-          <MedicationSmall />
-          <MedicationSmall />
-          <MedicationSmall />
-          <MedicationSmall />
 
+
+              {props.meds.map( med => (
+                <NavLink to="MedicationDetail" className=" ">
+                <MedicationSmall
+                  key={med.id}
+                  med={med}
+                  />
+                </NavLink>
+                ))}
 
 
         </div>

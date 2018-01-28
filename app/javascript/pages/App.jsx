@@ -25,11 +25,18 @@ constructor(props) {
     this.state = {
       chartsData: null,
       chartsLoaded: false,
+      currentChart: 1,
       chartsAnalytics: null,
+      chartColor: ['red','','','','','',''],
+      chartScale: [1,1,1,1,1,1,1],
       analyticsLoaded: false,
+      medicationsData: null,
+      medicationsLoaded: false,
+      currentMed: 1,
     }
     this.getCharts=this.getCharts.bind(this);
     this.getChartAnalytics= this.getChartAnalytics.bind(this);
+    this.getMedications= this.getMedications.bind(this);
 }
 
 
@@ -37,6 +44,7 @@ componentDidMount() {
   console.log('componentDidMount');
   this.getCharts(this.state.chartsLoaded);
   this.getChartAnalytics()
+  this.getMedications()
 }
 
 componentDidUpdate() {
@@ -47,7 +55,7 @@ componentDidUpdate() {
 
 
 getCharts() {
-  console.log({'before chartsData': this.state.chartsData})
+  // console.log({'before chartsData': this.state.chartsData})
   // debugger;
   fetch('/records')
   .then(res => res.json())
@@ -57,9 +65,26 @@ getCharts() {
         chartsLoaded: true,
         analyticsLoaded: false,
       })
-      console.log({'res':res})
-      console.log({'after chartsData': this.state.chartsData});
-      console.log({'state after chartsData': this.state});
+      // console.log({'res':res})
+      // console.log({'after chartsData': this.state.chartsData});
+      // console.log({'state after chartsData': this.state});
+    })
+    .catch(err => console.log(err))
+  }
+
+getMedications() {
+  console.log({'before medicationsData': this.state.medicationsData})
+  // debugger;
+  fetch('/medications')
+  .then(res => res.json())
+  .then((res) => {
+    this.setState({
+        medicationsData: res.data.medications,
+        medicationsLoaded: true,
+      })
+      // console.log({'res':res})
+      // console.log({'after medicationsData': this.state.medicationsData});
+      // console.log({'state after medicationsData': this.state});
     })
     .catch(err => console.log(err))
   }
@@ -94,7 +119,7 @@ getChartAnalytics() {
   )
           : <p> Loading... </p>
   }
-    console.log({'after Analytics':this.state.chartsAnalytics});
+    // console.log({'after Analytics':this.state.chartsAnalytics});
 }
 
 
@@ -111,7 +136,7 @@ getChartAnalytics() {
             exact />
 
 
-  {/* Chart List-  If api Charts data has returned chart list component is rendered */}
+  {/* Chart List-  If api Medications data has returned chart list component is rendered */}
           {(this.state.chartsLoaded)
           ? <Route
               path="/ChartList"
@@ -124,7 +149,7 @@ getChartAnalytics() {
           />
           : <p> Loading... </p> }
 
-  {/* Chart Details-  If api Charts data has returned chart list component is rendered */}
+{/* Chart Details-  If api Charts data has returned chart list component is rendered */}
           {(this.state.chartsLoaded)
           ? <Route
               path="/ChartDetails"
@@ -139,8 +164,39 @@ getChartAnalytics() {
 
 
           <Route path="/ChartForm" component={ChartForm}/>
-          <Route path="/MedicationList" component={MedicationList}/>
-          <Route path="/MedicationDetail" component={MedicationDetail}/>
+
+
+{/* Medication List-  If api medicaitons data has returned medication list component is rendered  */}
+          {(this.state.medicationsLoaded)
+          ? <Route
+              path="/MedicationList"
+              render={props => (<MedicationList
+                {...props}
+                meds={this.state.medicationsData}
+              />
+            )}
+          />
+          : <p> Loading... </p> }
+
+
+
+
+
+{/* Medication Detail-  If api medicaitons data has returned medication individual component is rendered  */}
+          {(this.state.medicationsLoaded)
+          ? <Route
+              path="/MedicationDetail"
+              render={props => (<MedicationDetail
+                {...props}
+                med={this.state.medicationsData[`${this.state.currentMed}`]}
+              />
+            )}
+          />
+          : <p> Loading... </p> }
+
+
+
+
           <Route path="/UserProfile" component={UserProfile}/>
           <Route path="/Import" component={Import}/>
 
@@ -151,7 +207,7 @@ getChartAnalytics() {
               render={props => (<NotFound
                 {...props}
                 records={this.state.chartsData}
-                chartsAnalytics={this.state.chartsAnalytics}
+                data={this.state}
               />
             )}
           />

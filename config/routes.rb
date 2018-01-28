@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :records
+  resources :medications
   devise_for :users
 
   root to: 'home#index'
