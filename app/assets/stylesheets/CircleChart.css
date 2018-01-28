@@ -1,0 +1,12 @@
+
+.holder {
+position: relative;
+  z-index: 1 }
+/*341 × 418*/
+
+.human {
+  position: absolute;
+  z-index: -1
+}
+
+

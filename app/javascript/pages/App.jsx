@@ -26,6 +26,7 @@ constructor(props) {
       chartsData: null,
       chartsLoaded: false,
       chartsAnalytics: null,
+      analyticsLoaded: false,
     }
     this.getCharts=this.getCharts.bind(this);
     this.getChartAnalytics= this.getChartAnalytics.bind(this);
@@ -38,6 +39,13 @@ componentDidMount() {
   this.getChartAnalytics()
 }
 
+componentDidUpdate() {
+  console.log('update');
+  {!(this.state.analyticsLoaded) ? (this.getChartAnalytics()) : console.log('no change')}
+}
+
+
+
 getCharts() {
   console.log({'before chartsData': this.state.chartsData})
   // debugger;
@@ -47,17 +55,28 @@ getCharts() {
     this.setState({
         chartsData: res.data.records,
         chartsLoaded: true,
+        analyticsLoaded: false,
       })
-      console.log(res)
+      console.log({'res':res})
       console.log({'after chartsData': this.state.chartsData});
+      console.log({'state after chartsData': this.state});
     })
     .catch(err => console.log(err))
   }
 
 
 getChartAnalytics() {
-  console.log('getChartAnalytics');
-  {(this.state.chartsLoaded) ? (
+  let countHead;
+  let countArm;
+  let countChest;
+  let countBack;
+  let countLowerBack;
+  let countLeg;
+  let countInternal;
+
+  console.log({'getChartAnalytics': this.state});
+  console.log(this.state.chartsLoaded)
+  {(this.state.chartsLoaded) & (!this.state.analyticsLoaded)  ? (
   countHead = this.state.chartsData.filter(record => (record.b_part == 1)).length,
   countArm = this.state.chartsData.filter(record => (record.b_part == 2)).length,
   countChest = this.state.chartsData.filter(record => (record.b_part == 3)).length,
@@ -66,7 +85,13 @@ getChartAnalytics() {
   countLeg = this.state.chartsData.filter(record => (record.b_part == 6)).length,
   countInternal = this.state.chartsData.filter(record => (record.b_part == 7)).length,
 
-  console.log([countHead,countArm,countChest,countBack,countLowerBack,countLeg,countInternal]) )
+  console.log([countHead,countArm,countChest,countBack,countLowerBack,countLeg,countInternal]),
+  this.setState({
+    chartsAnalytics:[countHead,countArm,countChest,countBack,countLowerBack,countLeg,countInternal],
+    analyticsLoaded: true,
+  })
+
+  )
           : <p> Loading... </p>
   }
     console.log({'after Analytics':this.state.chartsAnalytics});
@@ -86,29 +111,27 @@ getChartAnalytics() {
             exact />
 
 
-
-
-      {/* Location List-  If api Locations data has returned locationlist component is rendered */}
+  {/* Chart List-  If api Charts data has returned chart list component is rendered */}
           {(this.state.chartsLoaded)
           ? <Route
-            path="/ChartList"
-            render={props => (<ChartList
-              {...props}
-              records={this.state.chartsData}
-            />
+              path="/ChartList"
+              render={props => (<ChartList
+                {...props}
+                records={this.state.chartsData}
+              />
             )}
             exact
           />
           : <p> Loading... </p> }
 
-
+  {/* Chart Details-  If api Charts data has returned chart list component is rendered */}
           {(this.state.chartsLoaded)
           ? <Route
-            path="/ChartDetails"
-            render={props => (<ChartDetails
-              {...props}
-              records={this.state.chartsData}
-            />
+              path="/ChartDetails"
+              render={props => (<ChartDetails
+                {...props}
+                records={this.state.chartsData}
+              />
             )}
             exact
           />
@@ -120,7 +143,20 @@ getChartAnalytics() {
           <Route path="/MedicationDetail" component={MedicationDetail}/>
           <Route path="/UserProfile" component={UserProfile}/>
           <Route path="/Import" component={Import}/>
-          <Route path="/" component={NotFound}/>
+
+{/* Not Found-  If no good path is found then this is rendered */}
+          {(this.state.chartsLoaded) & (this.state.analyticsLoaded)
+          ? <Route
+              path="/"
+              render={props => (<NotFound
+                {...props}
+                records={this.state.chartsData}
+                chartsAnalytics={this.state.chartsAnalytics}
+              />
+            )}
+          />
+          : <p> Loading... </p> }
+
       </Switch>
 
 
