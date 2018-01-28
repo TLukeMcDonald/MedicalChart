@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package_label_principal_display_panel: MyString
+  manufacturer_name: MyString
+  unii: MyString
+  product_type: MyString
+  rxcui: MyString
+  spl_set_id: MyString
+  route: MyString
+  generic_name: MyString
+  brand_name: MyString
+  product_ndc: MyString
+  original_packager_product_ndc: MyString
+  substance_name: MyString
+  spl_id: MyString
+  pharm_class_moa: MyString
+  pharm_class_pe: MyString
+  application_number: MyString
+  nui: MyString
+  pharm_class_epc: MyString
+  package_ndc: MyString
+  id: MyString
+  indications_and_usage: MyString
+  dosage_and_administration: MyString
+
+two:
+  package_label_principal_display_panel: MyString
+  manufacturer_name: MyString
+  unii: MyString
+  product_type: MyString
+  rxcui: MyString
+  spl_set_id: MyString
+  route: MyString
+  generic_name: MyString
+  brand_name: MyString
+  product_ndc: MyString
+  original_packager_product_ndc: MyString
+  substance_name: MyString
+  spl_id: MyString
+  pharm_class_moa: MyString
+  pharm_class_pe: MyString
+  application_number: MyString
+  nui: MyString
+  pharm_class_epc: MyString
+  package_ndc: MyString
+  id: MyString
+  indications_and_usage: MyString
+  dosage_and_administration: MyString

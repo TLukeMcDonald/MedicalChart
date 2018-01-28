@@ -1,6 +1,9 @@
 import React from 'react';
 import ChartRecord from './../components/ChartRecord';
 import Aside from '../components/Aside';
+import ErrorBoundary from './../components/ErrorBoundary';
+import CircleChart from './../components/CircleChart';
+import SliderBar from './../components/SliderBar';
 import "./../../assets/stylesheets/ChartList"
 import male from "./../../assets/images/male.png"
 
@@ -13,13 +16,21 @@ const ChartList = (props) => {
           <div className="col col-1">
             <Aside/>
           </div>
-          <div className="col-6 mainFrame">
+          <div className="col-8 mainFrame">
             <h1> ChartList </h1>
-            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis. </p>
-            <img src={male} className="human" alt="male" />
+            <p> Here is your chart </p>
+
+          <ErrorBoundary>
+            <CircleChart data={props.chartsAnalytics} size={[500,500]} color={['','red','','','','','','']} scale={[1,1.2,1,1,1,1,1,1]}/>
+          </ErrorBoundary>
+
+          <ErrorBoundary>
+            <SliderBar data={[5,10,1,3]} size={[500,500]} />
+          </ErrorBoundary>
+
 
           </div>
-          <div className="col-4">
+          <div className="col-2-fluid">
             <div className="record">
 
 

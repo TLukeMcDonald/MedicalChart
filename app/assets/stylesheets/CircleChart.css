@@ -1,12 +1,26 @@
 
 .holder {
 position: relative;
-  z-index: 1 }
+z-index: 1; }
 /*341 × 418*/
 
-.human {
+.human1 {
+width: 341px;
+height: 418px;
   position: absolute;
-  z-index: -1
+  z-index: -1;
 }
 
 
+.tooltip {
+position: absolute;
+text-align: center;
+width: 60px;
+height: 28px;
+padding: 2px;
+font: 12px sans-serif;
+background: lightsteelblue;
+border: 0px;
+border-radius: 8px;
+pointer-events: none;
+}

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import "./../../assets/stylesheets/ChartRecord"
 
 const ChartRecord = (props) => {
-  console.log({'ChartRecord component loaded':props});
+  // console.log({'ChartRecord component loaded':props});
   return (
 
           <div className="card col">

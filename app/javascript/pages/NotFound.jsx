@@ -17,11 +17,11 @@ const NotFound = (props) => {
     <div className="container-fluid">
     <h1> Not Found </h1>
     <ErrorBoundary>
-      <BarChart data={props.chartsAnalytics} size={[200,200]} />
+      <BarChart data={props.data.chartsAnalytics} size={[200,200]} />
     </ErrorBoundary>
 
     <ErrorBoundary>
-      <CircleChart data={props.chartsAnalytics} size={[500,500]} color={['','red','','','','','','']}/>
+      <CircleChart data={props.data.chartsAnalytics} size={[500,500]} color={props.data.chartColor} scale={props.data.chartScale}/>
     </ErrorBoundary>
 
     <ErrorBoundary>

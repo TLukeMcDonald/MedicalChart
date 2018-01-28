@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127230737) do
+ActiveRecord::Schema.define(version: 20180128175539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "medications", force: :cascade do |t|
+    t.string "package_label_principal_display_panel"
+    t.string "manufacturer_name"
+    t.string "unii"
+    t.string "product_type"
+    t.string "rxcui"
+    t.string "spl_set_id"
+    t.string "route"
+    t.string "generic_name"
+    t.string "brand_name"
+    t.string "product_ndc"
+    t.string "original_packager_product_ndc"
+    t.string "substance_name"
+    t.string "spl_id"
+    t.string "pharm_class_moa"
+    t.string "pharm_class_pe"
+    t.string "application_number"
+    t.string "nui"
+    t.string "pharm_class_epc"
+    t.string "package_ndc"
+    t.string "indications_and_usage"
+    t.string "dosage_and_administration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.index ["manufacturer_name"], name: "index_medications_on_manufacturer_name"
+  end
 
   create_table "records", force: :cascade do |t|
     t.text "problem"
