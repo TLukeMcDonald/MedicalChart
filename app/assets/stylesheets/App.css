@@ -1,3 +1,14 @@
 .app {
   display: inline-flex;
 }
+
+.tracker {
+  border: 1px solid red;
+  display:inline-block;
+}
+
+.frame {
+  width: 960;
+  height:500;
+  border: 1px solid green;
+}

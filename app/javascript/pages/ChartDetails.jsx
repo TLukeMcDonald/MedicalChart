@@ -9,7 +9,7 @@ const ChartDetails = (props) => {
   console.log({'ChartDetails component loaded':props});
   return (
     <div>
-      <h1> ChartDetails </h1>
+      <h1 className='title'> ChartDetails </h1>
         <div className="container-fluid">
           <div className="row frame">
             <div className="col-3  frameHuman">
