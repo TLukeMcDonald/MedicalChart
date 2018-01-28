@@ -25,14 +25,17 @@ constructor(props) {
     this.state = {
       chartsData: null,
       chartsLoaded: false,
+      chartsAnalytics: null,
     }
     this.getCharts=this.getCharts.bind(this);
+    this.getChartAnalytics= this.getChartAnalytics.bind(this);
 }
 
 
 componentDidMount() {
   console.log('componentDidMount');
   this.getCharts(this.state.chartsLoaded);
+  this.getChartAnalytics()
 }
 
 getCharts() {
@@ -51,6 +54,23 @@ getCharts() {
     .catch(err => console.log(err))
   }
 
+
+getChartAnalytics() {
+  console.log('getChartAnalytics');
+  {(this.state.chartsLoaded) ? (
+  countHead = this.state.chartsData.filter(record => (record.b_part == 1)).length,
+  countArm = this.state.chartsData.filter(record => (record.b_part == 2)).length,
+  countChest = this.state.chartsData.filter(record => (record.b_part == 3)).length,
+  countBack = this.state.chartsData.filter(record => (record.b_part == 4)).length,
+  countLowerBack = this.state.chartsData.filter(record => (record.b_part == 5)).length,
+  countLeg = this.state.chartsData.filter(record => (record.b_part == 6)).length,
+  countInternal = this.state.chartsData.filter(record => (record.b_part == 7)).length,
+
+  console.log([countHead,countArm,countChest,countBack,countLowerBack,countLeg,countInternal]) )
+          : <p> Loading... </p>
+  }
+    console.log({'after Analytics':this.state.chartsAnalytics});
+}
 
 
 

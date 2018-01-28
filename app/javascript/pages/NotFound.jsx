@@ -19,7 +19,8 @@ const NotFound = (props) => {
     <BarChart data={[5,4,1,6,8,10,1,3]} size={[500,500]} />
 
     <ErrorBoundary>
-      <SliderBar data={[5,10,1,3]} size={[500,500]} />
+{/*}      <SliderBar data={[5,10,1,3]} size={[500,500]} />      */}
+    <div id="scroll"></div>
     </ErrorBoundary>
 
     </div>

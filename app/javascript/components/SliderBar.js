@@ -27,7 +27,7 @@ class SliderBar extends Component {
         data = d3.range(800).map(function() {
           return [randomX(), randomY()]; });
 
-    var scroll = d3.select(scroll),
+    var scroll = d3.select("#scroll"),
         margin = {top: 194, right: 50, bottom: 214, left: 50},
         width = +scroll.attr("width") - margin.left - margin.right,
         height = +scroll.attr("height") - margin.top - margin.bottom,
@@ -63,31 +63,30 @@ class SliderBar extends Component {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
 
-}
 
 
-    brushcentered() {
+
+    function brushcentered() {
       var dx = x(1) - x(0), // Use a fixed width when recentering.
           cx = d3.mouse(this)[0],
           x0 = cx - dx / 2,
           x1 = cx + dx / 2;
       d3.select(this.parentNode).call(brush.move, x1 > width ? [width - dx, width] : x0 < 0 ? [0, dx] : [x0, x1]);
-    }
+    };
 
-    brushed() {
+    function brushed() {
       var extent = d3.event.selection.map(x.invert, x);
       dot.classed("selected", function(d) { return extent[0] <= d[0] && d[0] <= extent[1]; });
     }
 
 
 
-
+}
 
 
 
 render() {
-  return
-      <svg ref={scroll => this.scroll = scroll}
+  return <svg ref={scroll => this.scroll = scroll}
         width="960" height="500">
       </svg>
    }
