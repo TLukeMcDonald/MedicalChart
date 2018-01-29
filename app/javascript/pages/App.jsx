@@ -183,6 +183,24 @@ getChartAnalytics() {
 
           <Route path="/ChartForm" component={ChartForm}/>
 
+{/* Chart Form-  If api Charts data has returned chart form component is rendered */}
+          {(this.state.chartsLoaded)
+          ? <Route
+              path="/ChartForm"
+              render={props => (<ChartForm
+                {...props}
+                data={this.state.chartsData.filter(this.getSingleRecord)}
+                setCurrentRecord={this.setCurrentRecord}
+                isadd={false}
+              />
+            )}
+            exact
+          />
+          : <p> Loading... </p> }
+
+
+
+
 
 {/* Medication List-  If api medicaitons data has returned medication list component is rendered  */}
           {(this.state.medicationsLoaded)
