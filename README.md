@@ -9,10 +9,10 @@ As a military member I’ve moved frequently. As a project manager I’ve shifte
 Now you can search by body part and time series to easily see trends and patterns. Import your medical records prior to leaving doctors or when you get sick. 
 
 ## Wireframes <br>
- [Full set of wireframes can be found here](https://github.com/TLukeMcDonald/MedicalChart/tree/master/Assets/Wireframes) Create with [Basalmiq](https://balsamiq.cloud/srwjz/p6u5k)
+ [Full set of wireframes can be found here](https://github.com/TLukeMcDonald/MedicalChart/tree/master/Assets/Wireframes) Created with [Basalmiq](https://balsamiq.cloud/srwjz/p6u5k)
 - ![Main View with filter shelf out](https://git.generalassemb.ly/lukemcdonald/Project4-MedChart/blob/master/Assets/Wireframes/Filter.png)
 - ![Details Page](https://git.generalassemb.ly/lukemcdonald/Project4-MedChart/blob/master/Assets/Wireframes/Detail%20Record.png)
-- ![Medicine List](https://git.generalassemb.ly/lukemcdonald/Project4-MedChart/master/Assets/Wireframes/Medicine%20List.png)
+- ![Medicine List](https://git.generalassemb.ly/lukemcdonald/Project4-MedChart/blob/master/Assets/Wireframes/Medicine%20List.png)
 
 ## User stories <br>
 Tracking of the project and user stories can been seen in the [Projects Tab](https://github.com/TLukeMcDonald/MedicalChart/projects)
@@ -40,22 +40,26 @@ https://leanpub.com/D3-Tips-and-Tricks
 
 ## Feautured code snippet of a part of the app you're particularly proud of
 D3 Creating a bar chart
-`createBarChart() {
+```
+    createBarChart() {
       const node = this.node
       const dataMax = d3.max(this.props.data)
       const yScale = d3.scaleLinear()
          .domain([0, dataMax])
          .range([0, this.props.size[1]])
+
    d3.select(node)
       .selectAll('rect')
       .data(this.props.data)
       .enter()
       .append('rect')
+
    d3.select(node)
       .selectAll('rect')
       .data(this.props.data)
       .exit()
       .remove()
+
    d3.select(node)
       .selectAll('rect')
       .data(this.props.data)
@@ -63,7 +67,8 @@ D3 Creating a bar chart
       .attr('x', (d,i) => i * 30)
       .attr('y', d => this.props.size[1] - yScale(d))
       .attr('height', d => yScale(d))
-      .attr('width', 25)`
+      .attr('width', 25)
+```
 
 ## Future Any things you plan to fix or features you plan to add
 - Connecting the charts in D3
