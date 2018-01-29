@@ -88,21 +88,9 @@ class CircleChart extends Component {
          .style("fill", this.props.color[6])
          .style("stroke", "black")
 
+// var formatTime = d3.time.format("%e %B");
 
 
-
-      //  const tooltip = d3.select('#tooltip')
-      //    position: absolute;
-      //    text-align: center;
-      //    width: 60px;
-      //    height: 28px;
-      //    padding: 2px;
-      //    font: 12px sans-serif;
-      //    background: lightsteelblue;
-      //    border: 0px;
-      //    border-radius: 8px;
-      //    pointer-events: none;
-      // }
 
    }
 

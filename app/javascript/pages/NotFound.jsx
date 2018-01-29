@@ -7,6 +7,7 @@ import ErrorBoundary from './../components/ErrorBoundary';
 import BarChart from './../components/BarChart';
 import CircleChart from './../components/CircleChart';
 import SliderBar from './../components/SliderBar';
+import SliderBar2 from './../components/SliderBar2';
 import "./../../assets/stylesheets/NotFound.css"
 
 
@@ -30,6 +31,10 @@ const NotFound = (props) => {
 
     <ErrorBoundary>
       <div id="scroll"></div>
+    </ErrorBoundary>
+
+   <ErrorBoundary>
+      <SliderBar2 data={[5,10,1,3]} size={[500,500]} />
     </ErrorBoundary>
 
     </div>

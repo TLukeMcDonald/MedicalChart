@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '"./../../assets/stylesheets/App.css';
+import './../../assets/stylesheets/App.css';
+// import './../../assets/stylesheets/SliderBar.css';
 // import { scaleLinear } from 'd3-scale’;
 import * as d3 from "d3";
 // import { max } from 'd3-array';
@@ -11,6 +12,7 @@ class SliderBar extends Component {
       this.createSlider = this.createSlider.bind(this)
       // this.brushed = this.brushed.bind(this)
       // this.brushcentered = this.brushcentered.bind(this)
+      console.log({"SliderBar": props})
    }
    componentDidMount() {
       this.createSlider()
@@ -20,29 +22,50 @@ class SliderBar extends Component {
    }
 
 
-
     createSlider() {
+
+      //format ("yyyy-mm-dd", #) converts date string to year with (month and day added as fraction of the month)
+    //   function formatData(d,b) {
+    //     console.log(d)
+    //    let year = parseInt(d.slice(0,4));
+    //   let month = parseInt(d.slice(5,7))/13;
+    //   let day = (parseInt(d.slice(8,11))/32)*.0769
+    //   d = year + month + day
+    //    b = b*.1
+    //    console.log({d,b})
+    //   return {d, b}
+    // }
+    // formatData(this.props.data.chartsData[1].event_date,this.props.data.chartsData[1].b_part)
+    // formatData("2017-05-05", 4)
+
+    //   data = this.props.data.chartsData.forEach( data => {
+    //     for (var i = 0; i < this.props.data.chartsData.length; i++) {
+    //       console.log(i)
+    //       formatData(this.props.data.chartsData[i].event_date,this.props.data.chartsData[i].b_part)
+    //     }
+    //   })
+
+
       //create random circles to use; Range is number of circles
-     const randomX = d3.randomUniform(0, 10),
-        randomY = d3.randomNormal(0.5, 0.12),
-        // data plugged into chart, range was 800
-        data = d3.range(5).map(function() {
+     const randomX = d3.randomUniform( 2000, 2017),
+        randomY = d3.randomUniform(.1, .7),
+        // //data plugged into chart, range was 800 // looks like data = [4, 0.7]
+        data = d3.range(40).map(function() {
           return [randomX(), randomY()]; });
-        // data = [4,.7]
         console.log({'slider data':data})
 
 
     // creating initial frame
     var svg = d3.select("#svg1"),
-        margin = {top: 194, right: 50, bottom: 214, left: 50},
+        margin = {top: 30, right: 30, bottom: 20, left: 30},
         width = +svg.attr("width") - margin.left - margin.right,
         height = +svg.attr("height") - margin.top - margin.bottom,
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        console.log({'g':g})
+        // console.log({'g':g})
 
     // creates scale at bottom; domain is numbers
     var x = d3.scaleLinear()
-        .domain([0, 10])
+        .domain([2000, 2017])
         .range([0, width]);
 
     // creates scale  ; added domain  0-10 no change, 10-0 they started at the top
@@ -67,7 +90,7 @@ class SliderBar extends Component {
     // main function
     g.append("g")
         .call(brush)
-        .call(brush.move, [3, 5].map(x))
+        .call(brush.move, [2006, 2009].map(x)) //brush starting location
       .selectAll(".overlay")
         .each(function(d) { d.type = "selection"; }) // Treat overlay interaction as move.
         .on("mousedown touchstart", brushcentered); // Recenter before brushing. //mousedown: Triggered by an element when a mouse button is pressed down over it
@@ -91,7 +114,8 @@ class SliderBar extends Component {
     function brushed() {
       var extent = d3.event.selection.map(x.invert, x);
       dot.classed("selected", function(d) { return extent[0] <= d[0] && d[0] <= extent[1]; });
-      // console.log(dot.classed("selected", function(d) { return extent[0] <= d[0] && d[0] <= extent[1]; }))
+      console.log(d3.selectAll(".selected"))
+       // console.log(dot.classed("selected", function(d) { return extent[0] <= d[0] && d[0] <= extent[1]; }))
     }
 
 
@@ -103,10 +127,9 @@ class SliderBar extends Component {
   render() {
     return <div>
       <div className="frame">
-      <h1> text </h1>
       </div>
       <div className="frame">
-        <svg width="960" height="500" id="svg1">
+        <svg width="500" height="100" id="svg1">
         </svg>
       </div>
     </div>

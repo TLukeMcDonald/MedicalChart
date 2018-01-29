@@ -8,7 +8,7 @@ import "./../../assets/stylesheets/ChartList"
 import male from "./../../assets/images/male.png"
 
 const ChartList = (props) => {
-  console.log({'ChartList component loaded':props});
+  console.log({'ChartList':props});
   return (
     <div className="chartlist">
         <div className="container-fluid">
@@ -16,21 +16,21 @@ const ChartList = (props) => {
           <div className="col col-1">
             <Aside/>
           </div>
-          <div className="col-8 mainFrame">
+          <div className="col-7 mainFrame">
             <h1> ChartList </h1>
-            <p> Here is your chart </p>
+
 
           <ErrorBoundary>
-            <CircleChart data={props.chartsAnalytics} size={[500,500]} color={['','red','','','','','','']} scale={[1,1.2,1,1,1,1,1,1]}/>
+            <CircleChart data={props.data.chartsAnalytics} size={[500,500]} color={props.data.chartColor} scale={props.data.chartScale}/>
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <SliderBar data={[5,10,1,3]} size={[500,500]} />
+            <SliderBar data={props.data} size={[150,500]} />
           </ErrorBoundary>
 
 
           </div>
-          <div className="col-2-fluid">
+          <div className="col-3-fluid">
             <div className="record">
 
 
@@ -38,6 +38,8 @@ const ChartList = (props) => {
                 <ChartRecord
                   key={record.id}
                   record={record}
+                  setCurrentRecord={props.setCurrentRecord}
+                  // onClick={props.setCurrentRecord(record.id)}
                   />
                 ))}
 
