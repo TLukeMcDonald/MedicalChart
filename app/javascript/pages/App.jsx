@@ -27,7 +27,7 @@ constructor(props) {
       chartsLoaded: false,
       currentChart: 1,
       chartsAnalytics: null,
-      chartColor: ['red','','','','','',''],
+      chartColor: ['red','red','','','','',''],
       chartScale: [1,1,1,1,1,1,1],
       analyticsLoaded: false,
       medicationsData: null,
@@ -143,6 +143,7 @@ getChartAnalytics() {
               render={props => (<ChartList
                 {...props}
                 records={this.state.chartsData}
+                data={this.state}
               />
             )}
             exact
