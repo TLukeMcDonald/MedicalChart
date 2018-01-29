@@ -1,6 +1,8 @@
 # MedicalChart
 
 ### Objective
+For this project I am creating a web app using React and D3 on the frontend and Ruby on Rails for the backend. 
+
 [Full Project Proposal Here](https://github.com/TLukeMcDonald/MedicalChart/blob/master/Assets/Project_Docs/Project_Proposal-Medical_Chart%20.pdf)
 ![Project Proposal](https://git.generalassemb.ly/lukemcdonald/Project4-MedChart/blob/master/Assets/Project_Docs/Screen%20Shot%202018-01-18%20at%2012.32.59%20PM.png) <br>
 As a military member I’ve moved frequently. As a project manager I’ve shifted under various health insurance programs and have had to routinely change doctors since they might not be covered under the new insurance.  Medical records don’t always transfer and as a patient you need to take charge of your history and be able to point out previous problems you’ve had that might be related. 
