@@ -37,6 +37,8 @@ constructor(props) {
     this.getCharts=this.getCharts.bind(this);
     this.getChartAnalytics= this.getChartAnalytics.bind(this);
     this.getMedications= this.getMedications.bind(this);
+    this.getSingleRecord=this.getSingleRecord.bind(this);
+    this.setCurrentRecord=this.setCurrentRecord.bind(this);
 }
 
 
@@ -123,6 +125,18 @@ getChartAnalytics() {
 }
 
 
+  getSingleRecord(record) {
+    return record.id === this.state.currentChart;
+    console.log(this.state.chartsData.find(getSingleRecord));
+  }
+
+  setCurrentRecord(id) {
+    this.setState({
+      currentChart: id,
+      })
+  }
+
+
 
   render() {
     return (
@@ -144,6 +158,7 @@ getChartAnalytics() {
                 {...props}
                 records={this.state.chartsData}
                 data={this.state}
+                setCurrentRecord={this.setCurrentRecord}
               />
             )}
             exact
@@ -156,7 +171,9 @@ getChartAnalytics() {
               path="/ChartDetails"
               render={props => (<ChartDetails
                 {...props}
-                records={this.state.chartsData}
+                data={this.state}
+                dataSingle={this.state.chartsData.filter(this.getSingleRecord)}
+                setCurrentRecord={this.setCurrentRecord}
               />
             )}
             exact

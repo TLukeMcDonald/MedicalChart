@@ -38,6 +38,8 @@ const ChartList = (props) => {
                 <ChartRecord
                   key={record.id}
                   record={record}
+                  setCurrentRecord={props.setCurrentRecord}
+                  // onClick={props.setCurrentRecord(record.id)}
                   />
                 ))}
 
